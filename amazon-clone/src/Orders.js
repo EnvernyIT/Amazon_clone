@@ -4,6 +4,7 @@ import Order from './Order';
 import './Orders.css';
 import { useStateValue } from './StateProvider';
 
+
 function Orders() {
     const [{ basket, user}, dispatch] = useStateValue();
     const [orders, setOrders] = useState([]);
@@ -27,10 +28,12 @@ function Orders() {
 
 
     return (
-        <div className="orders">
-            <div className="orders__order">
+        <div className='orders'>
+            <h1>Your Orders</h1>
+
+            <div className='orders__order'>
                 {orders?.map(order => (
-                    <Order order={order}/>
+                    <Order order={order} />
                 ))}
             </div>
         </div>
